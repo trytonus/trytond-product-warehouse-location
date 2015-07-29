@@ -7,6 +7,7 @@
 """
 from trytond.pool import Pool
 from .product import ProductWarehouseLocation, Product
+from .report import ConsolidatedPickingList
 
 
 def register():
@@ -14,4 +15,8 @@ def register():
         ProductWarehouseLocation,
         Product,
         module='product_warehouse_location', type_='model'
+    )
+    Pool.register(
+        ConsolidatedPickingList,
+        module='product_warehouse_location', type_='report'
     )
