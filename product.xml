@@ -11,5 +11,30 @@
             <field name="type">tree</field>
             <field name="name">product_warehouse_location_list</field>
         </record>
+
+        <!-- Access -->
+        <record model="ir.model.access" id="access_group_stock">
+            <field name="model" search="[('model', '=', 'product.warehouse.location')]"/>
+            <field name="group" ref="stock.group_stock"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.model.access" id="access_group_product_admin">
+            <field name="model" search="[('model', '=', 'product.warehouse.location')]"/>
+            <field name="group" ref="product.group_product_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.model.access" id="access_non_groups">
+            <field name="model" search="[('model', '=', 'product.warehouse.location')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
     </data>
 </tryton>
